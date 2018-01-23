@@ -13,7 +13,8 @@ stderror <- 0.1055
 n <-  100 #sample size
 degfreedom <- n - 2 #degrees of freedom is 100 - 2
 t <- (slope - 0) / stderror #calculate t-statistic
-pvalue <- 2 * pt(-abs(t), degfreedom) #calculate p-value
+#pvalue <- 2 * pt(-abs(t), degfreedom) #calculate p-value
+pvalue <- 2 * pt(t, df = degfreedom, lower.tail = FALSE)
 pvalue
 
 #2. Calculate a 95% confidence interval for the slope given above.
